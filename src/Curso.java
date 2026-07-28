@@ -11,12 +11,20 @@ public class Curso {
     }
     //Problema: Metodo adiciona e imprimi aluno ao mesmo tempo
     public void addAluno(Aluno aluno){
+        for (Aluno aluno1: alunos) {
+            if (aluno1.getCpf() == aluno.getCpf()) {
+                System.out.println("CPF duplicado");
+                return;
+            }
+        }
         alunos.add(aluno);
         System.out.println("NOME: " + aluno.getNome());
         System.out.println("CPF: " + aluno.getCpf());
         System.out.println("IDADE: " + aluno.getIdade());
         System.out.println( "Aluno adicionado com sucesso");
         System.out.println();
+
+
     }
 
     public void listarAlunos(){
