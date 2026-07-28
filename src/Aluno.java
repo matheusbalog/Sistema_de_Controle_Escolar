@@ -8,6 +8,7 @@ public class Aluno {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
+
     }
 
 
@@ -23,6 +24,4 @@ public class Aluno {
     public  int getIdade(){
         return idade;
     }
-
-
 }

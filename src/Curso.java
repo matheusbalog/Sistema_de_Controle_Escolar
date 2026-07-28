@@ -24,4 +24,16 @@ public class Curso {
             System.out.println();
         }
     }
+
+    public void removerAluno(Aluno aluno){
+        if (alunos.contains(aluno)){
+            alunos.remove(aluno);
+            System.out.println("ALuno removido com Sucesso");
+            System.out.println();
+        }
+
+        else{
+            System.out.println("Não é possível remover - ALUNO NÃO MATRICULADO");
+        }
+    }
 }

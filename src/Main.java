@@ -11,6 +11,8 @@
             curso.addAluno(aluno1);
             curso.addAluno(aluno2);
             curso.listarAlunos();
+            curso.removerAluno(aluno1);
+            curso.listarAlunos();
 
         }
     }
