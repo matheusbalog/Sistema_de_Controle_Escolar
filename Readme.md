@@ -12,3 +12,4 @@ Este é um projeto técnico de Estágio em Tecnologia. É um sistema de matrícu
 
 5. Os métodos realizam validações e exibem mensagens diretamente ao usuário, misturando regras de negócio com a camada de apresentação.
 
+6. O método `removerAluno()` depende do objeto `Aluno` completo para realizar a remoção, em vez de utilizar um identificador único, como o CPF.
