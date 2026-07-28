@@ -1,15 +1,18 @@
 import  java.util.ArrayList;
 public class Curso {
-
+    private String nome;
+    private int codigo;
     private ArrayList<Aluno> alunos;
 
     public Curso(String nome, int codigo){
         alunos = new ArrayList<>();
+        this.codigo = codigo;
+        this.nome = nome;
     }
-
+    //Problema: Metodo adiciona e imprimi aluno ao mesmo tempo
     public void addAluno(Aluno aluno){
         alunos.add(aluno);
-        System.out.println("NOME: " + aluno.getAluno());
+        System.out.println("NOME: " + aluno.getNome());
         System.out.println("CPF: " + aluno.getCpf());
         System.out.println("IDADE: " + aluno.getIdade());
         System.out.println( "Aluno adicionado com sucesso");
@@ -18,7 +21,7 @@ public class Curso {
 
     public void listarAlunos(){
         for (Aluno aluno: alunos){
-            System.out.println("NOME: " + aluno.getAluno());
+            System.out.println("NOME: " + aluno.getNome());
             System.out.println("CPF: " + aluno.getCpf());
             System.out.println("IDADE: " + aluno.getIdade());
             System.out.println();

@@ -13,7 +13,7 @@ public class Aluno {
 
 
     //GETTERS
-    public String getAluno(){
+    public String getNome(){
         return nome;
     }
 
