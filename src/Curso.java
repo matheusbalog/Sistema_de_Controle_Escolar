@@ -27,10 +27,12 @@ public class Curso {
             System.out.println();
         }
     }
-
+    //Problema: Metodo remove e imprimi aluno ao mesmo tempo
     public void removerAluno(Aluno aluno){
         if (alunos.contains(aluno)){
-            alunos.remove(aluno);
+            System.out.println("NOME: " + aluno.getNome());
+            System.out.println("CPF: " + aluno.getCpf());
+            System.out.println("IDADE: " + aluno.getIdade());
             System.out.println("ALuno removido com Sucesso");
             System.out.println();
         }
