@@ -2,6 +2,7 @@ public class Aluno {
     private String nome;
     private int cpf;
     private int idade;
+    private Curso curso;
 
 
     public Aluno(String nome, int cpf, int idade){
@@ -23,5 +24,12 @@ public class Aluno {
 
     public  int getIdade(){
         return idade;
+    }
+    public void setCurso(Curso curso){
+        this.curso = curso;
+    }
+
+    public Curso getCurso() {
+        return curso;
     }
 }

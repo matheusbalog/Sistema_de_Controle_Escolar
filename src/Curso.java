@@ -28,14 +28,9 @@ public class Curso {
 
     }
 
-    public void listarAlunos(){
-        for (Aluno aluno: alunos){
-            System.out.println("NOME: " + aluno.getNome());
-            System.out.println("CPF: " + aluno.getCpf());
-            System.out.println("IDADE: " + aluno.getIdade());
-            System.out.println();
-        }
-    }
+
+
+
     //Problema: Metodo remove e imprimi aluno ao mesmo tempo
     public void removerAluno(Aluno aluno){
         if (alunos.contains(aluno)){
@@ -50,4 +45,30 @@ public class Curso {
             System.out.println("Não é possível remover - ALUNO NÃO MATRICULADO");
         }
     }
+
+
+    public void listarAlunos(){
+        for (Aluno aluno: alunos){
+            System.out.println("LISTA DE ALUNOS DE UM CURSO: ");
+            System.out.println("NOME: " + aluno.getNome());
+            System.out.println("CPF: " + aluno.getCpf());
+            System.out.println("IDADE: " + aluno.getIdade());
+            System.out.println();
+        }
+        System.out.println("Nenhum aluno encontrado");
+}
+
+    public Aluno buscarAlunoporCpf(int cpf) {
+        for (Aluno aluno : alunos) {
+            if (aluno.getCpf() == cpf) {
+                System.out.println("Aluno encontrado");
+                System.out.println(aluno.getNome());
+                System.out.println("CPF: " + aluno.getCpf());
+                System.out.println("IDADE: " + aluno.getIdade());
+                System.out.println();
+                return aluno;
+            }
+        }
+        System.out.println("Aluno não encontrado no curso");
+        return null;}
 }
