@@ -44,4 +44,12 @@ public class Aluno {
     public void setNota(int nota){
         this.nota = nota;
     }
-}
+
+    public void verificarSituacao() {
+        if (nota < 7) {
+            //Sem return: object calisthenics, uso de else
+            System.out.println("Reprovado");
+        } else {
+            System.out.println("Aprovado");
+        }
+    }}
