@@ -10,14 +10,12 @@
 
 
             direito.addAluno(aluno1);
-            engenharia.addAluno(aluno2);
+            direito.removerAluno(aluno1);
 
 
             // Problema: Responsabilidade de gerenciamento geral colocada em uma classe específica.
             // Curso deve gerenciar apenas seus próprios alunos,
             // enquanto uma classe Escola deve gerenciar os cursos e buscas globais.
             direito.listarAlunos();
-            engenharia.buscarAlunoporCpf(539);
-            engenharia.buscarAlunoporNome("Eduardo");
         }
     }
