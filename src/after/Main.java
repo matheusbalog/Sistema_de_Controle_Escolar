@@ -1,25 +1,22 @@
 package after;
 
-class Main{
-        public static void main(String[] args) {
-            //Instanciaçao do curso
-            Curso engenharia = new Curso("Engenharia", 1);
-            Curso direito = new Curso("Direito", 2);
+public class Main {
+    public static void main(String[] args) {
+        Curso direito = new Curso("Direito", 2);
 
-            //Criação dos alunos
-            Aluno aluno1 = new Aluno("Matheus", 537, 19, 9);
-            Aluno aluno2 = new Aluno("Eduardo", 539, 20, 5);
+        Aluno aluno1 = new Aluno("Matheus", new Cpf("53712345678"), 19, new Nota(9));
+        Aluno aluno2 = new Aluno("Eduardo", new Cpf("53912345678"), 20, new Nota(5));
 
+        boolean adicionado = direito.addAluno(aluno2);
+        System.out.println(adicionado ? "Aluno adicionado com sucesso" : "CPF duplicado");
 
-            direito.addAluno(aluno2);
-            aluno2.setNome("Eduarda");
-            direito.removerAluno(539);
-            aluno2.alterarNota(2);
-            aluno2.verificarSituacao();
+        aluno2.setNome("Eduarda");
 
+        direito.listarAlunos().forEach(a ->
+                System.out.println(a.getNome() + " - " + a.getCpf() + " - " + a.getIdade())
+        );
 
-            // Problema: Responsabilidade de gerenciamento geral colocada em uma classe específica.
-            // Curso deve gerenciar apenas seus próprios alunos,
-            // enquanto uma classe Escola deve gerenciar os cursos e buscas globais.
-        }
+        aluno2.setNota(new Nota(2));
+        System.out.println(aluno2.isAprovado() ? "Aprovado" : "Reprovado");
     }
+}
