@@ -1,96 +1,41 @@
 package after;
 
-import  java.util.ArrayList;
-public class Curso {
-    private String nome;
-    private int codigo;
-    private ArrayList<Aluno> alunos;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
-    public Curso(String nome, int codigo){
-        alunos = new ArrayList<>();
-        this.codigo = codigo;
+public class Curso {
+    private final String nome;
+    private final int codigo;
+    private final List<Aluno> alunos = new ArrayList<>();
+
+    public Curso(String nome, int codigo) {
         this.nome = nome;
+        this.codigo = codigo;
     }
-    //Problema: Metodo adiciona e imprimi aluno ao mesmo tempo
-    public void addAluno(Aluno aluno){
-        for (Aluno aluno1: alunos) {
-            if (aluno1.getCpf() == aluno.getCpf()) {
-                System.out.println("CPF duplicado");
-                return;
-                //PROBLEMA: Object calisthenics - COLOCAR ELSE
-            }
+
+    public boolean addAluno(Aluno aluno) {
+        if (buscarPorCpf(aluno.getCpf()).isPresent()) {
+            return false;
         }
         alunos.add(aluno);
-        System.out.println("NOME: " + aluno.getNome());
-        System.out.println("CPF: " + aluno.getCpf());
-        System.out.println("IDADE: " + aluno.getIdade());
-        System.out.println( "Aluno adicionado com sucesso");
-        System.out.println();
-
-
+        return true;
     }
 
-
-
-
-    //Problema: Metodo remove e imprime aluno ao mesmo tempo
-    public void removerAluno(int cpf) {
-        for (Aluno aluno : alunos) {
-            if (aluno.getCpf() == cpf){
-                alunos.remove(aluno);
-                System.out.println("NOME: " + aluno.getNome());
-                System.out.println("CPF: " + aluno.getCpf());
-                System.out.println("IDADE: " + aluno.getIdade());
-                System.out.println("Aluno removido por CPF");
-                return;
-            }
-        }
-        System.out.println("Aluno Não removido");
+    public boolean removerAluno(Cpf cpf) {
+        return alunos.removeIf(a -> a.getCpf().equals(cpf));
     }
 
+    public List<Aluno> listarAlunos() {
+        return Collections.unmodifiableList(alunos);
+    }
 
-    public void listarAlunos(){
-        for (Aluno aluno: alunos){
-            System.out.println("LISTA DE ALUNOS DE UM CURSO: ");
-            System.out.println("NOME: " + aluno.getNome());
-            System.out.println("CPF: " + aluno.getCpf());
-            System.out.println("IDADE: " + aluno.getIdade());
-            System.out.println();
-            return;
-        }
-        System.out.println("Não foi possível listar alunos - nenhum matriculado");
+    public Optional<Aluno> buscarPorCpf(Cpf cpf) {
+        return alunos.stream().filter(a -> a.getCpf().equals(cpf)).findFirst();
+    }
 
+    public Optional<Aluno> buscarPorNome(String nome) {
+        return alunos.stream().filter(a -> a.getNome().equalsIgnoreCase(nome)).findFirst();
+    }
 }
-
-    public Aluno buscarAlunoporCpf(int cpf) {
-        for (Aluno aluno : alunos) {
-            if (aluno.getCpf() == cpf) {
-                System.out.println("Aluno encontrado");
-                System.out.println(aluno.getNome());
-                System.out.println("CPF: " + aluno.getCpf());
-                System.out.println("IDADE: " + aluno.getIdade());
-                System.out.println();
-                return aluno;
-            }
-        }
-        System.out.println("Aluno não encontrado no curso");
-        return null;}
-
-    public Aluno buscarAlunoporNome(String nome) {
-        for (Aluno aluno : alunos) {
-            if (aluno.getNome().equals(nome)) {
-                System.out.println("Aluno encontrado");
-                System.out.println(aluno.getNome());
-                System.out.println("CPF: " + aluno.getCpf());
-                System.out.println("IDADE: " + aluno.getIdade());
-                System.out.println();
-                return aluno;
-            }
-        }
-        System.out.println("Aluno não encontrado no curso");
-        return null;}
-}
-
-
-
-
