@@ -3,13 +3,15 @@ public class Aluno {
     private int cpf;
     private int idade;
     private Curso curso;
+    private int nota;
 
 
 
-    public Aluno(String nome, int cpf, int idade){
+    public Aluno(String nome, int cpf, int idade, int nota){
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
+        this.nota = nota;
 
     }
 
@@ -32,5 +34,14 @@ public class Aluno {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public void alterarNota(int nota){
+        setNota(nota);
+        System.out.println("Nota alterada para: " + nota);
+    }
+
+    public void setNota(int nota){
+        this.nota = nota;
     }
 }
