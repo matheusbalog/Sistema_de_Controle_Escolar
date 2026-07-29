@@ -21,3 +21,7 @@ Funcionalidades
 ✓ buscar por nome
 ✓ listar alunos
 ✓ alterar aluno
+
+
+TEMA: 
+Object calisthenics: evitar uso de else com return | Encapsulamento | SRP

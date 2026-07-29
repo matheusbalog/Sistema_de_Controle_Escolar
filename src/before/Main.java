@@ -11,8 +11,9 @@ class Main{
 
 
             direito.addAluno(aluno2);
+            direito.addAluno(aluno1);
             aluno2.setNome("Eduarda");
-            direito.removerAluno(539);
+            direito.listarAlunos();
 //            aluno2.alterarNota(10);
 //            aluno2.verificarSituacao();
 

@@ -55,10 +55,7 @@ public class Curso {
             System.out.println("CPF: " + aluno.getCpf());
             System.out.println("IDADE: " + aluno.getIdade());
             System.out.println();
-            return;
         }
-        System.out.println("Não foi possível listar alunos - nenhum matriculado");
-
 }
 
     public Aluno buscarAlunoporCpf(int cpf) {
