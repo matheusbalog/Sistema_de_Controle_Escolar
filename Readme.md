@@ -25,3 +25,23 @@ Funcionalidades
 
 TEMA: 
 Object calisthenics: evitar uso de else com return | Encapsulamento | SRP
+
+#
+
+Objetos de Valor (Value Objects - Calisthenics "Wrap Primitives"):
+
+Criaremos a classe Nota (que se autovalida entre 0 e 10 e sabe se é uma nota de aprovação).
+
+Criaremos a classe CPF (que valida os dígitos e garante a formatação).
+
+Eliminação Total de I/O (System.out.println) no Domínio (SRP):
+
+As classes de modelo (Aluno, Curso, Escola) apenas processam dados e lançam exceções se algo estiver errado. A impressão fica exclusivamente na Main.
+
+Eliminação do else e Métodos sem Ninhos de Indentação (Calisthenics):
+
+Uso de Guard Clauses (retorno antecipado/exceções) e Stream API do Java.
+
+Encapsulamento de Coleções ("First-Class Collections"):
+
+Proteção de listas contra modificações externas diretas usando Collections.unmodifiableList().
