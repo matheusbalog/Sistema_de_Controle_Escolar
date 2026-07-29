@@ -9,8 +9,8 @@
             Aluno aluno2 = new Aluno("Eduardo", 539, 20);
 
 
-            direito.addAluno(aluno1);
-            direito.removerAluno(aluno1);
+            direito.addAluno(aluno2);
+            direito.removerAluno(539);
 
 
             // Problema: Responsabilidade de gerenciamento geral colocada em uma classe específica.

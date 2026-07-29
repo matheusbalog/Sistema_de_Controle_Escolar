@@ -32,19 +32,18 @@ public class Curso {
 
 
     //Problema: Metodo remove e imprime aluno ao mesmo tempo
-    public void removerAluno(Aluno aluno){
-        if (alunos.contains(aluno)){
-            alunos.remove(aluno);
-            System.out.println("NOME: " + aluno.getNome());
-            System.out.println("CPF: " + aluno.getCpf());
-            System.out.println("IDADE: " + aluno.getIdade());
-            System.out.println("ALuno removido com Sucesso");
-            System.out.println();
+    public void removerAluno(int cpf) {
+        for (Aluno aluno : alunos) {
+            if (aluno.getCpf() == cpf){
+                alunos.remove(aluno);
+                System.out.println("NOME: " + aluno.getNome());
+                System.out.println("CPF: " + aluno.getCpf());
+                System.out.println("IDADE: " + aluno.getIdade());
+                System.out.println("Aluno removido por CPF");
+                return;
+            }
         }
-
-        else{
-            System.out.println("Não é possível remover - ALUNO NÃO MATRICULADO");
-        }
+        System.out.println("Aluno Não removido");
     }
 
 
@@ -55,7 +54,9 @@ public class Curso {
             System.out.println("CPF: " + aluno.getCpf());
             System.out.println("IDADE: " + aluno.getIdade());
             System.out.println();
+            return;
         }
+        System.out.println("Não foi possível listar alunos - nenhum matriculado");
 
 }
 
