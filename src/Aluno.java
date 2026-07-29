@@ -28,8 +28,4 @@ public class Aluno {
     public void setCurso(Curso curso){
         this.curso = curso;
     }
-
-    public Curso getCurso() {
-        return curso;
-    }
 }
