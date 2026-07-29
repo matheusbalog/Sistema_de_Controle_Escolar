@@ -5,6 +5,7 @@ public class Aluno {
     private Curso curso;
 
 
+
     public Aluno(String nome, int cpf, int idade){
         this.nome = nome;
         this.cpf = cpf;
@@ -27,5 +28,9 @@ public class Aluno {
     }
     public void setCurso(Curso curso){
         this.curso = curso;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

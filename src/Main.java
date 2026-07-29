@@ -10,7 +10,8 @@
 
 
             direito.addAluno(aluno2);
-            direito.removerAluno(539);
+            aluno2.setNome("Eduarda");
+//            direito.removerAluno(539);
 
 
             // Problema: Responsabilidade de gerenciamento geral colocada em uma classe específica.
