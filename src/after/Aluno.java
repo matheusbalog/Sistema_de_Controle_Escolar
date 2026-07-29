@@ -1,3 +1,5 @@
+package after;
+
 public class Aluno {
     private String nome;
     private int cpf;
@@ -47,9 +49,10 @@ public class Aluno {
 
     public void verificarSituacao() {
         if (nota < 7) {
-            //Sem return: object calisthenics, uso de else
+            //Com return: object calisthenics,evita o uso de else
             System.out.println("Reprovado");
-        } else {
-            System.out.println("Aprovado");
+            return;
         }
-    }}
+        System.out.println("Aprovado");
+        }
+    }

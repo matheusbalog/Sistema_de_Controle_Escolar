@@ -1,3 +1,5 @@
+package after;
+
 import  java.util.ArrayList;
 public class Curso {
     private String nome;

@@ -1,4 +1,5 @@
-    class Main{
+package before;
+class Main{
         public static void main(String[] args) {
             //Instanciaçao do curso
             Curso engenharia = new Curso("Engenharia", 1);
@@ -11,8 +12,9 @@
 
             direito.addAluno(aluno2);
             aluno2.setNome("Eduarda");
-            aluno2.alterarNota(10);
-            aluno2.verificarSituacao();
+            direito.removerAluno(539);
+//            aluno2.alterarNota(10);
+//            aluno2.verificarSituacao();
 
 
             // Problema: Responsabilidade de gerenciamento geral colocada em uma classe específica.
