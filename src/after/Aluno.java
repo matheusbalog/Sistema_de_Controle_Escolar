@@ -5,11 +5,9 @@ public class Aluno {
     private int cpf;
     private int idade;
     private Curso curso;
-    private int nota;
+    private Nota nota;
 
-
-
-    public Aluno(String nome, int cpf, int idade, int nota){
+    public Aluno(String nome, int cpf, int idade, Nota nota){
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
@@ -22,14 +20,14 @@ public class Aluno {
     public String getNome(){
         return nome;
     }
-
     public  int getCpf(){
         return cpf;
     }
-
     public  int getIdade(){
         return idade;
     }
+
+    //SETTERS
     public void setCurso(Curso curso){
         this.curso = curso;
     }
@@ -38,21 +36,12 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public void alterarNota(int nota){
-        setNota(nota);
-        System.out.println("Nota alterada para: " + nota);
-    }
-
     public void setNota(int nota){
         this.nota = nota;
     }
 
-    public void verificarSituacao() {
-        if (nota < 7) {
-            //Com return: object calisthenics,evita o uso de else
-            System.out.println("Reprovado");
-            return;
-        }
-        System.out.println("Aprovado");
-        }
+    public boolean isAprovado(){
+        return nota.isAprovado()
+    }
+
     }
