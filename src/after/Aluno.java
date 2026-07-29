@@ -41,7 +41,7 @@ public class Aluno {
     }
 
     public boolean isAprovado(){
-        return nota.isAprovado()
+        return nota.isAprovado();
     }
 
     }
