@@ -55,7 +55,7 @@ public class Curso {
             System.out.println("IDADE: " + aluno.getIdade());
             System.out.println();
         }
-        System.out.println("Nenhum aluno encontrado");
+
 }
 
     public Aluno buscarAlunoporCpf(int cpf) {
@@ -71,4 +71,22 @@ public class Curso {
         }
         System.out.println("Aluno não encontrado no curso");
         return null;}
+
+    public Aluno buscarAlunoporNome(String nome) {
+        for (Aluno aluno : alunos) {
+            if (aluno.getNome().equals(nome)) {
+                System.out.println("Aluno encontrado");
+                System.out.println(aluno.getNome());
+                System.out.println("CPF: " + aluno.getCpf());
+                System.out.println("IDADE: " + aluno.getIdade());
+                System.out.println();
+                return aluno;
+            }
+        }
+        System.out.println("Aluno não encontrado no curso");
+        return null;}
 }
+
+
+
+
