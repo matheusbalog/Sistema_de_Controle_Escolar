@@ -15,7 +15,6 @@ public class Curso {
         for (Aluno aluno1: alunos) {
             if (aluno1.getCpf() == aluno.getCpf()) {
                 System.out.println("CPF duplicado");
-                return;
                 //PROBLEMA: Object calisthenics - COLOCAR ELSE
             }
         }
