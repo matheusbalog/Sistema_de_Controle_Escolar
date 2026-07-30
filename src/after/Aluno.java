@@ -23,7 +23,7 @@ public class Aluno {
     public void setNome(String nome) { this.nome = nome; }
     public void setNota(Nota nota) { this.nota = nota; }
     public void setCurso(Curso curso) { this.curso = curso; }
-//Só existe 1 único metodo de consulta
+//Só existe 1 único metodo de consulta, além disso não tem else e não imrpimi nada na tela também
     public boolean isAprovado() {
         return nota.isAprovado();
     }

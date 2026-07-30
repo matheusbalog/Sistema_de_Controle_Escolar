@@ -14,7 +14,7 @@ public class Curso {
         this.nome = nome;
         this.codigo = codigo;
     }
-//Metodos retornam valor ao invés de imrpimir
+// Resolve PROBLEMA 1, 4 e 5: sem printar, sem acoplamento a console, sem validação+mensagem juntas
     public boolean addAluno(Aluno aluno) {
         if (buscarPorCpf(aluno.getCpf()).isPresent()) {
             return false;
@@ -22,12 +22,12 @@ public class Curso {
         alunos.add(aluno);
         return true;
     }
-
+    // Resolve PROBLEMA 2 e 6: recebe Cpf (o identificador), e não o Aluno inteiro
     public boolean removerAluno(Cpf cpf) {
         return alunos.removeIf(a -> a.getCpf().equals(cpf));
     }
 
-    //Coleção protegida
+    //Resolve PROBLEMA 3: Coleção protegida, não tem mais como imprimir nada então não dá para  duplicar
     public List<Aluno> listarAlunos() {
         return Collections.unmodifiableList(alunos);
     }
