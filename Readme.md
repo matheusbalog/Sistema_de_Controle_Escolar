@@ -1,5 +1,43 @@
 # Sistema de Matrícula Escolar
-Este é um projeto técnico de Estágio em Tecnologia. É um sistema de matrícula Escolar escrito em Java e utilizando conceitos de POO.
+Projeto técnico de Estágio em Tecnologia. Este é um sistema de matrícula Escolar escrito em Java e utilizando conceitos de POO.
+
+## Funcionalidades
+
+- Matricular aluno em um curso;
+- Remover Aluno de um curso;
+- Buscar aluno por CPF;
+- Buscar aluno por nome;
+- Listar alunos por curso;
+- Alterar o nome de um aluno
+- Adicionar nota;
+- Alterar nota;
+- Verficar situação do aluno (Para efeito de demonstração, considerei média igual a 7);
+
+## Estrutura do projeto
+
+``
+.
+└── src/
+    ├── after/
+    │   ├── Aluno
+    │   ├── Cpf
+    │   ├── Curso
+    │   ├── CursoTeste.java/
+    │   │   └── CursoTeste
+    │   ├── Main
+    │   └── Nota
+    └── before/
+        ├── Aluno
+        ├── Curso
+        └── Main
+``
+
+
+
+
+
+
+
 
 ### Problemas encontrados
 1. Método `addAluno()` adiciona aluno em um curso e imprime o aluno ao mesmo tempo - VIOLA SRP
