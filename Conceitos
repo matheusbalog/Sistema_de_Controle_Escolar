@@ -1,0 +1,27 @@
+SRP (Single Responsibility Principle)
+    -Um dos princípios SOLID
+    -Uma classe deve ter apenas um motivo para mudar
+    Vantagens:
+        1. Facilidade de entender e fazer manutenção no código
+        2. Coesão
+        3. Implementar testes automatizados
+
+
+
+ENCAPSULAMENTO
+       -Cria cápsula protetora ao redor dos dados para que somente métodos específicos acessem ou altere,
+       -Reduz o acoplamento (dependência entre classes)
+       -Não impacta outras partes do sistema
+       -Oculta informações do usuário
+
+
+
+
+
+
+
+OBJECT CALISTHENICS
+2. Evitar o uso de else (Reduz aninhamento)
+3. Encapsular todos os primitivos (Evita obsessão por primitivos - código duplicado)
+
+

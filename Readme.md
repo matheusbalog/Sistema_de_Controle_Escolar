@@ -2,7 +2,7 @@
 Projeto de Estágio em Tecnologia. Este é um exemplo de sistema de matrícula Escolar escrito em Java e utilizando conceitos de POO.
 
 ### Tema
-SRP (Single Responsiblity Principle), Encapsulamento e Object Calisthenics (Regras 2, 3 e 4).
+SRP (Single Responsiblity Principle), Encapsulamento e Object Calisthenics (Regras 2 e 3).
 
 ## Funcionalidades
 
