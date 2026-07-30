@@ -3,6 +3,8 @@ package after;
 public final class Cpf {
     private final String numero;
 
+    //Objeto de valor representa o CPF
+    //Objeto Já nasce válido
     public Cpf(String numero) {
         String limpo = numero.replaceAll("[^0-9]", "");
         if (limpo.length() != 11) {

@@ -14,12 +14,7 @@ class Main{
             direito.addAluno(aluno1);
             aluno2.setNome("Eduarda");
             direito.listarAlunos();
-//            aluno2.alterarNota(10);
-//            aluno2.verificarSituacao();
-
-
-            // Problema: Responsabilidade de gerenciamento geral colocada em uma classe específica.
-            // Curso deve gerenciar apenas seus próprios alunos,
-            // enquanto uma classe Escola deve gerenciar os cursos e buscas globais.
+            aluno2.alterarNota(10);
+            aluno2.verificarSituacao();
         }
     }

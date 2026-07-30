@@ -14,7 +14,7 @@ public class Curso {
         this.nome = nome;
         this.codigo = codigo;
     }
-
+//Metodos retornam valor ao invés de imrpimir
     public boolean addAluno(Aluno aluno) {
         if (buscarPorCpf(aluno.getCpf()).isPresent()) {
             return false;
@@ -27,10 +27,12 @@ public class Curso {
         return alunos.removeIf(a -> a.getCpf().equals(cpf));
     }
 
+    //Coleção protegida
     public List<Aluno> listarAlunos() {
         return Collections.unmodifiableList(alunos);
     }
 
+    //Obrigado a tratar o caso de "Nao encontrado" (.isPresent()), se esquecer de checar
     public Optional<Aluno> buscarPorCpf(Cpf cpf) {
         return alunos.stream().filter(a -> a.getCpf().equals(cpf)).findFirst();
     }

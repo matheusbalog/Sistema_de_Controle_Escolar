@@ -10,15 +10,17 @@ public class Curso {
         this.codigo = codigo;
         this.nome = nome;
     }
-    //Problema: Metodo adiciona e imprimi aluno ao mesmo tempo
+    // PROBLEMA 1: adiciona E imprime no mesmo metodo (viola SRP)
+    // PROBLEMA 5: valida duplicidade e decide a mensagem para o usuário
     public void addAluno(Aluno aluno){
         for (Aluno aluno1: alunos) {
             if (aluno1.getCpf() == aluno.getCpf()) {
-                System.out.println("CPF duplicado");
-                //PROBLEMA: Object calisthenics - COLOCAR ELSE
+                System.out.println("CPF duplicado"); // PROBLEMA 4: acoplado ao console
+                return;
             }
         }
         alunos.add(aluno);
+        // PROBLEMA 3: 4 métodos diferentes
         System.out.println("NOME: " + aluno.getNome());
         System.out.println("CPF: " + aluno.getCpf());
         System.out.println("IDADE: " + aluno.getIdade());
@@ -31,7 +33,9 @@ public class Curso {
 
 
 
-    //Problema: Metodo remove e imprime aluno ao mesmo tempo
+    // PROBLEMA 2: remove E imprime no mesmo metodo (viola SRP)
+    // PROBLEMA 6: recebe cpf (int) mas o Aluno inteiro é percorrido para achar
+    // PROBLEMA 3: 4 métodos diferentes
     public void removerAluno(int cpf) {
         for (Aluno aluno : alunos) {
             if (aluno.getCpf() == cpf){
@@ -49,6 +53,7 @@ public class Curso {
 
     public void listarAlunos(){
         for (Aluno aluno: alunos){
+            // PROBLEMA 3: 4 métodos diferentes
             System.out.println("LISTA DE ALUNOS DE UM CURSO: ");
             System.out.println("NOME: " + aluno.getNome());
             System.out.println("CPF: " + aluno.getCpf());
@@ -57,8 +62,10 @@ public class Curso {
         }
 }
 
+    // PROBLEMA 3 de novo: terceira repetição do mesmo bloco de println
     public Aluno buscarAlunoporCpf(int cpf) {
         for (Aluno aluno : alunos) {
+            // PROBLEMA 3: 4 métodos diferentes
             if (aluno.getCpf() == cpf) {
                 System.out.println("Aluno encontrado");
                 System.out.println(aluno.getNome());
@@ -73,6 +80,7 @@ public class Curso {
 
     public Aluno buscarAlunoporNome(String nome) {
         for (Aluno aluno : alunos) {
+            // PROBLEMA 3: 4 métodos diferentes
             if (aluno.getNome().equals(nome)) {
                 System.out.println("Aluno encontrado");
                 System.out.println(aluno.getNome());
