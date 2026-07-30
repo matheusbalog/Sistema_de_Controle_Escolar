@@ -1,5 +1,5 @@
 # Sistema de Matrícula Escolar
-Projeto técnico de Estágio em Tecnologia. Este é um sistema de matrícula Escolar escrito em Java e utilizando conceitos de POO.
+Projeto de Estágio em Tecnologia. Este é um exemplo de sistema de matrícula Escolar escrito em Java e utilizando conceitos de POO.
 
 ### Tema
 SRP (Single Responsiblity Principle), Encapsulamento e Object Calisthenics (Regras 2, 3 e 4).
@@ -81,7 +81,7 @@ No package `after`, estes 9 problemas foram resolvidos desta maneira:
 ## Testes
 Abra o arquivo `CursoTeste.java` e execute.
 
-**Dependência**: não usa Maven/Gradle. O JUnit 5 foi adicionado via `junit-platform-console-standalone`
+**Dependência**: Não usa Maven/Gradle. O JUnit 5 foi adicionado via `junit-platform-console-standalone`
 
 
 
