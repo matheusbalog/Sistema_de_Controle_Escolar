@@ -41,13 +41,13 @@ src/
 
 2. Método `removerAluno()` remove aluno em um curso e imprime o aluno ao mesmo tempo - **SRP**
 
-3. Há duplicação de código na impressão das informações do aluno (`nome`, `CPF` e `idade`) em diferentes métodos, dificultando a manutenção.
+3. Há duplicação de código na impressão das informações do aluno (`nome`, `CPF` e `idade`) em diferentes métodos, dificultando a manutenção.**SRP**
 
-4. A classe `Curso` está acoplada à saída do console (`System.out.println`), dificultando a reutilização da lógica em outros tipos de interface, como uma aplicação web ou gráfica.
+4. A classe `Curso` está acoplada à saída do console (`System.out.println`), dificultando a reutilização da lógica em outros tipos de interface, como uma aplicação web ou gráfica.**SRP**
 
-5. Os métodos realizam validações e exibem mensagens diretamente ao usuário, misturando regras de negócio com a camada de apresentação.
+5. Os métodos realizam validações e exibem mensagens diretamente ao usuário, misturando regras de negócio com a camada de apresentação.**SRP**
 
-6. O método `removerAluno()` depende do objeto `Aluno` completo para realizar a remoção, em vez de utilizar um identificador único, como o CPF.
+6. O método `removerAluno()` depende do objeto `Aluno` completo para realizar a remoção, em vez de utilizar um identificador único, como o CPF.**SRP**
 
 7. Uso de else no método `verificarSituacao()` - **Regra 2 Object Calisthenics**
 
