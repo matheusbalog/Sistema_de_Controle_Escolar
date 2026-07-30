@@ -1,7 +1,7 @@
 package before;
 public class Aluno {
     private String nome;
-    // PROBLEMA 8: CPF como int e não cabe 11 dígitos |
+    // PROBLEMA 8: CPF como int e não cabe 11 dígitos
     private int cpf;
     private int idade;
     private Curso curso;
@@ -59,4 +59,6 @@ public class Aluno {
             System.out.println("Aprovado");
         }
     }}
+
+
 

@@ -25,6 +25,7 @@ public class Curso {
         System.out.println("CPF: " + aluno.getCpf());
         System.out.println("IDADE: " + aluno.getIdade());
         System.out.println( "Aluno adicionado com sucesso");
+        //Matrícula mudar e impressão mudar: 2 motivos
         System.out.println();
 
 
@@ -62,7 +63,7 @@ public class Curso {
         }
 }
 
-    // PROBLEMA 3 de novo: terceira repetição do mesmo bloco de println
+    // PROBLEMA 3: 4 métodos diferentes
     public Aluno buscarAlunoporCpf(int cpf) {
         for (Aluno aluno : alunos) {
             // PROBLEMA 3: 4 métodos diferentes

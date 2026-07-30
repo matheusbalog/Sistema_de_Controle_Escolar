@@ -8,6 +8,7 @@ public final class Cpf {
     public Cpf(String numero) {
         String limpo = numero.replaceAll("[^0-9]", "");
         if (limpo.length() != 11) {
+            //Object calisthenics regra 2 - Evita uso de else
             throw new IllegalArgumentException("CPF deve ter 11 dígitos");
         }
         this.numero = limpo;
@@ -19,6 +20,7 @@ public final class Cpf {
 
     @Override
     public boolean equals(Object o) {
+        //Dois objetos são iguais?
         if (!(o instanceof Cpf)) return false;
         return numero.equals(((Cpf) o).numero);
     }

@@ -27,7 +27,7 @@ public class Curso {
         return alunos.removeIf(a -> a.getCpf().equals(cpf));
     }
 
-    //Resolve PROBLEMA 3: Coleção protegida, não tem mais como imprimir nada então não dá para  duplicar
+    //Resolve PROBLEMA 3: Coleção protegida, não tem mais como imprimir nada então não dá para duplicar
     public List<Aluno> listarAlunos() {
         return Collections.unmodifiableList(alunos);
     }

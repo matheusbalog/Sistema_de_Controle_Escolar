@@ -3,7 +3,7 @@ package after;
 public class Aluno {
     //Aluno só tem dados
     private String nome;
-    private final Cpf cpf;
+    private final Cpf cpf; //Objeto de valor
     private final int idade;
     private Curso curso;
     private Nota nota;
@@ -23,7 +23,7 @@ public class Aluno {
     public void setNome(String nome) { this.nome = nome; }
     public void setNota(Nota nota) { this.nota = nota; }
     public void setCurso(Curso curso) { this.curso = curso; }
-//Só existe 1 único metodo de consulta, além disso não tem else e não imrpimi nada na tela também
+//Só existe 1 único metodo de consulta, além disso não tem else e não imprime nada na tela também
     public boolean isAprovado() {
         return nota.isAprovado();
     }

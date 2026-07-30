@@ -31,7 +31,7 @@ class CursoTest {
     void naoDeveEncontrarAlunoComNomeInexistente() {
         Curso curso = new Curso("Direito", 1);
 
-        Optional<Aluno> encontrado = curso.buscarPorNome("Ninguem");
+        Optional<Aluno> encontrado = curso.buscarPorNome("Alicia");
 
         assertTrue(encontrado.isEmpty());
     }
