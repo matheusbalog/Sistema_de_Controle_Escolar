@@ -1,6 +1,9 @@
 # Sistema de Matrícula Escolar
 Projeto técnico de Estágio em Tecnologia. Este é um sistema de matrícula Escolar escrito em Java e utilizando conceitos de POO.
 
+### Tema
+SRP (Single Responsiblity Principle), Encapsulamento e Object Calisthenics (Regras 2, 3 e 4).
+
 ## Funcionalidades
 
 - Matricular aluno em um curso;
@@ -12,6 +15,8 @@ Projeto técnico de Estágio em Tecnologia. Este é um sistema de matrícula Esc
 - Adicionar nota;
 - Alterar nota;
 - Verficar situação do aluno (Para efeito de demonstração, considerei média igual a 7);
+
+
 
 ## Estrutura do projeto
 
@@ -31,17 +36,10 @@ src/
     └── Main
 ```
 
+## Problemas encontrados no package `before`
+1. Método `addAluno()` adiciona aluno em um curso e imprime o aluno ao mesmo tempo - **SRP** 
 
-
-
-
-
-
-
-### Problemas encontrados
-1. Método `addAluno()` adiciona aluno em um curso e imprime o aluno ao mesmo tempo - VIOLA SRP
-
-2. Método `removerAluno()` remove aluno em um curso e imprime o aluno ao mesmo tempo - VIOLA SRP
+2. Método `removerAluno()` remove aluno em um curso e imprime o aluno ao mesmo tempo - **SRP**
 
 3. Há duplicação de código na impressão das informações do aluno (`nome`, `CPF` e `idade`) em diferentes métodos, dificultando a manutenção.
 
@@ -51,34 +49,48 @@ src/
 
 6. O método `removerAluno()` depende do objeto `Aluno` completo para realizar a remoção, em vez de utilizar um identificador único, como o CPF.
 
-Funcionalidades
-✓ matricular aluno
-✓ remover aluno
-✓ buscar por CPF
-✓ buscar por nome
-✓ listar alunos
-✓ alterar aluno
+7. Uso de else no método `verificarSituacao()` - **Regra 2 Object Calisthenics**
+
+8. No package `before` existia obsessão por primitivos (`int Cpf` e `int Nota`). No package `after` isto foi resolvido criando as classes `Nota` e `Cpf` - **Regra 3 Object Calisthenics**
+
+9. Encapsulamento básico dos atributos da classe - **Encapsulamento**
+
+## Refatoração no package `after`
+
+No package `after`, estes 9 problemas foram resolvidos desta maneira:
+
+1. `addAluno()` não imprime mais nada — apenas verifica duplicidade de CPF e retorna `boolean` (`true` se adicionou, `false` se já existia). Quem decide o que exibir é a `Main`.
+
+2. `removerAluno()` segue o mesmo princípio: usa `alunos.removeIf(...)` e retorna `boolean`, sem nenhum `System.out.println` dentro da classe `Curso`.
+
+3. A duplicação de `println` de nome/CPF/idade foi eliminada porque a impressão não existe mais dentro de `Curso` — ficou concentrada em um único lugar, na `Main`, então não há mais o que duplicar.
+
+4. `Curso` (e `Aluno`) não dependem mais de `System.out`. Toda a lógica de negócio pode ser reaproveitada em outra interface (web, API, GUI) sem alterar essas classes.
+
+5. Validação e exibição foram separadas: os métodos de `Curso` e `Aluno` só retornam o resultado da validação (`boolean`, `Optional`, exceção); a `Main` que decide a mensagem mostrada ao usuário.
+
+6. `removerAluno()` e `buscarPorCpf()` agora recebem um `Cpf` (identificador), não o objeto `Aluno` inteiro — a remoção não depende mais de ter a referência completa do aluno em mãos.
+
+7. O `else` de `verificarSituacao()` foi eliminado — a lógica virou `Nota.isAprovado()`, um método sem nenhum `if/else`, e `Aluno.isAprovado()` delega pra ele (guard clauses aplicadas também em `addAluno`/`removerAluno`).
+
+8. Criadas as classes `Cpf` e `Nota` como objetos de valor, cada uma validando sua própria regra no construtor (CPF com 11 dígitos, nota entre 0 e 10) — elimina a obsessão por primitivos.
+
+9. O encapsulamento foi fortalecido: além de campos `private`, `Cpf` e `Nota` agora garantem que é **impossível** existir um objeto em estado inválido, porque a validação acontece na criação, não depende de quem chama lembrar de validar.
 
 
-TEMA: 
-Object calisthenics: evitar uso de else com return | Encapsulamento | SRP
+## Testes
+Abra o arquivo `CursoTeste.java` e execute.
 
-#
+**Dependência**: não usa Maven/Gradle. O JUnit 5 foi adicionado via `junit-platform-console-standalone`
 
-Objetos de Valor (Value Objects - Calisthenics "Wrap Primitives"):
 
-Criaremos a classe Nota (que se autovalida entre 0 e 10 e sabe se é uma nota de aprovação).
 
-Criaremos a classe CPF (que valida os dígitos e garante a formatação).
+## Tecnologias
 
-Eliminação Total de I/O (System.out.println) no Domínio (SRP):
+- Java
+- IntelliJ IDEA
+- JUnit 5
 
-As classes de modelo (Aluno, Curso, Escola) apenas processam dados e lançam exceções se algo estiver errado. A impressão fica exclusivamente na Main.
+## Autor
 
-Eliminação do else e Métodos sem Ninhos de Indentação (Calisthenics):
-
-Uso de Guard Clauses (retorno antecipado/exceções) e Stream API do Java.
-
-Encapsulamento de Coleções ("First-Class Collections"):
-
-Proteção de listas contra modificações externas diretas usando Collections.unmodifiableList().
+Matheus Balog
