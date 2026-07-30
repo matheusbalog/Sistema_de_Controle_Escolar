@@ -15,22 +15,21 @@ Projeto técnico de Estágio em Tecnologia. Este é um sistema de matrícula Esc
 
 ## Estrutura do projeto
 
-``
-.
-└── src/
-    ├── after/
-    │   ├── Aluno
-    │   ├── Cpf
-    │   ├── Curso
-    │   ├── CursoTeste.java/
-    │   │   └── CursoTeste
-    │   ├── Main
-    │   └── Nota
-    └── before/
-        ├── Aluno
-        ├── Curso
-        └── Main
-``
+```
+src/
+├── after/
+│   ├── Aluno
+│   ├── Cpf
+│   ├── Curso
+│   ├── CursoTeste.java/
+│   │   └── CursoTeste
+│   ├── Main
+│   └── Nota
+└── before/
+    ├── Aluno
+    ├── Curso
+    └── Main
+```
 
 
 
