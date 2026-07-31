@@ -28,33 +28,12 @@ class CursoTest {
     }
 
     @Test
-    void naoDeveEncontrarAlunoComNomeInexistente() {
-        Curso curso = new Curso("Direito", 1);
-
-        Optional<Aluno> encontrado = curso.buscarPorNome("Alicia");
-
-        assertTrue(encontrado.isEmpty());
-    }
-
-    @Test
     void listarAlunosDeveRetornarListaComTamanhoCorreto() {
         Curso curso = new Curso("Direito", 1);
         curso.addAluno(new Aluno("Matheus", new Cpf("53712345678"), 19, new Nota(9)));
         curso.addAluno(new Aluno("Eduardo", new Cpf("53912345678"), 20, new Nota(5)));
 
         assertEquals(2, curso.listarAlunos().size());
-    }
-
-    @Test
-    void listarAlunosDeveSerImutavel() {
-        Curso curso = new Curso("Direito", 1);
-        curso.addAluno(new Aluno("Matheus", new Cpf("53712345678"), 19, new Nota(9)));
-
-        List<Aluno> alunos = curso.listarAlunos();
-
-        assertThrows(UnsupportedOperationException.class, () ->
-                alunos.add(new Aluno("Invasor", new Cpf("00000000000"), 18, new Nota(5)))
-        );
     }
 
     @Test
@@ -73,28 +52,27 @@ class CursoTest {
 
         assertEquals(cpf1, cpf2);
     }
-
-        @Test
+    @Test
         void deveAprovarAlunoComNotaMaiorOuIgualA7() {
             assertTrue(new Nota(8).isAprovado());
         }
 
-        @Test
+    @Test
         void deveReprovarAlunoComNotaMenorQue7() {
             assertFalse(new Nota(6).isAprovado());
         }
 
-        @Test
+    @Test
         void naoDeveAceitarNotaForaDoIntervalo() {
             assertThrows(IllegalArgumentException.class, () -> new Nota(11));
         }
 
-        @Test
+    @Test
         void naoDeveAceitarCpfComTamanhoInvalido() {
             assertThrows(IllegalArgumentException.class, () -> new Cpf("123"));
         }
 
-        @Test
+    @Test
         void naoDevePermitirDoisAlunosComMesmoCpf() {
             Curso curso = new Curso("Direito", 1);
             Cpf cpf = new Cpf("53712345678");

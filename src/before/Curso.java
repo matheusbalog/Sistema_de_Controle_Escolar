@@ -35,7 +35,7 @@ public class Curso {
 
 
     // PROBLEMA 2: remove E imprime no mesmo metodo (viola SRP)
-    // PROBLEMA 6: recebe cpf (int) mas o Aluno inteiro é percorrido para achar
+    // PROBLEMA 6: recebe cpf (int) mas o Aluno inteiro é percorrido para achar - referência completa do aluno para achar
     // PROBLEMA 3: 4 métodos diferentes
     public void removerAluno(int cpf) {
         for (Aluno aluno : alunos) {

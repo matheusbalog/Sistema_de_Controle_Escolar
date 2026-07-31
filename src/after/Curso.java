@@ -16,6 +16,7 @@ public class Curso {
     }
 // Resolve PROBLEMA 1, 4 e 5: sem printar, sem acoplamento a console, sem validação+mensagem juntas
     public boolean addAluno(Aluno aluno) {
+        //Não valida CPF do aluno
         if (buscarPorCpf(aluno.getCpf()).isPresent()) {
             return false;
         }

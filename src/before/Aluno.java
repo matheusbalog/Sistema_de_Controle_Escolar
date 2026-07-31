@@ -32,6 +32,9 @@ public class Aluno {
     public  int getIdade(){
         return idade;
     }
+
+
+    //SETTERS
     public void setCurso(Curso curso){
         this.curso = curso;
     }
@@ -40,6 +43,8 @@ public class Aluno {
         this.nome = nome;
     }
 
+
+    //SRP: ALTERA NOTA E IMPRIME
     public void alterarNota(int nota){
         setNota(nota);
         System.out.println("Nota alterada para: " + nota);
@@ -52,9 +57,8 @@ public class Aluno {
 
     public void verificarSituacao() {
         if (nota < 7) {
-            //Sem return: object calisthenics, uso de else
             System.out.println("Reprovado");
-            // PROBLEMA 7: uso de else (Regra 2 Object Calisthenics)
+            // PROBLEMA 7: uso de else
         } else {
             System.out.println("Aprovado");
         }
