@@ -1,5 +1,5 @@
-# Sistema de Matrícula Escolar
-Projeto de Estágio em Tecnologia. Este é um exemplo de sistema de matrícula Escolar escrito em Java e utilizando conceitos de POO.
+# Sistema de Controle Escolar
+Projeto de Estágio em Tecnologia. Este é um exemplo de Sistema de Controle Escolar escrito em Java e utilizando conceitos de POO.
 
 ### Tema
 SRP (Single Responsiblity Principle), Encapsulamento e Object Calisthenics (Regras 2 e 3).

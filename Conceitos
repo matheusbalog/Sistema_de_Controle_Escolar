@@ -1,3 +1,11 @@
+1. Apresentação
+2. Explicação dos conceitos
+3. Explicar o before
+4. Explicar o after
+5. Benefícios
+6. Testes
+
+
 SRP (Single Responsibility Principle)
     -Um dos princípios SOLID
     -Uma classe deve ter apenas um motivo para mudar
@@ -9,11 +17,10 @@ SRP (Single Responsibility Principle)
 
 
 ENCAPSULAMENTO
-       -Cria cápsula protetora ao redor dos dados para que somente métodos específicos acessem ou altere,
+       -Cria cápsula protetora ao redor dos dados para que somente métodos específicos acessem ou alterem,
        -Reduz o acoplamento (dependência entre classes)
        -Não impacta outras partes do sistema
        -Oculta informações do usuário
-
 
 
 
@@ -29,5 +36,7 @@ OBJECT CALISTHENICS
 
 BENEFÍCIOS
 
--
--
+-Regra 2: Menos código, menos complexo, guard clauses = métodos menores
+-Regera 3: Objeto valida seus próprios dados, evita duplicação
+-Encapsulamento: Sistema + seguro e confiável, facilita escalabilidade
+-SRP: Facilita localizar erros, - acoplamento, mudanças afetam - partes do sistema
