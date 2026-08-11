@@ -1,21 +1,26 @@
 package after;
 
 public final class Nota {
-    private final double valor;
+    private final double valor1;
+    private final double valor2;
+    private final double valor3;
 
     //Objeto já nasce válido
-    public Nota(double valor) {
-        if (valor < 0 || valor > 10) {
+    public Nota(double valor1, double valor2, double valor3) {
+        if (valor1 < 0 || valor1 > 10 || valor2 < 0 || valor2 > 10 || valor3 < 0 || valor3 > 10) {
             throw new IllegalArgumentException("Nota deve estar entre 0 e 10");
         }
-        this.valor = valor;
+        this.valor1 = valor1;
+        this.valor2 = valor2;
+        this.valor3 = valor3;
     }
 
     public boolean isAprovado() {
-        return valor >= 7;
+        double resultado = (valor1+valor2+valor3)/3;
+        return resultado>= 7;
     }
 
     public double getValor() {
-        return valor;
+        return valor1;
     }
 }
