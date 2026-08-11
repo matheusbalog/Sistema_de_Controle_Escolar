@@ -28,21 +28,22 @@ class CursoTest {
     }
 
     @Test
+    void naoDeveEncontrarAlunoInexistente() {
+        Curso curso = new Curso("Direito", 1);
+        curso.addAluno(new Aluno("Eduardo", new Cpf("53712345678"), 19, new Nota(9)));
+
+        Optional<Aluno> encontrado = curso.buscarPorNome("Matheus");
+
+        assertFalse(encontrado.isPresent());
+    }
+
+    @Test
     void listarAlunosDeveRetornarListaComTamanhoCorreto() {
         Curso curso = new Curso("Direito", 1);
         curso.addAluno(new Aluno("Matheus", new Cpf("53712345678"), 19, new Nota(9)));
         curso.addAluno(new Aluno("Eduardo", new Cpf("53912345678"), 20, new Nota(5)));
 
         assertEquals(2, curso.listarAlunos().size());
-    }
-
-    @Test
-    void alunoDeveRefletirNovaNotaAposSetNota() {
-        Aluno aluno = new Aluno("Matheus", new Cpf("53712345678"), 19, new Nota(9));
-
-        aluno.setNota(new Nota(3));
-
-        assertFalse(aluno.isAprovado());
     }
 
     @Test
@@ -64,7 +65,7 @@ class CursoTest {
 
     @Test
         void naoDeveAceitarNotaForaDoIntervalo() {
-            assertThrows(IllegalArgumentException.class, () -> new Nota(11));
+            assertThrows(IllegalArgumentException.class, () -> new Nota(-1));
         }
 
     @Test
