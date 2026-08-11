@@ -20,7 +20,15 @@ public final class Nota {
         return resultado>= 7;
     }
 
-    public double getValor() {
+    public double getValor1() {
         return valor1;
+    }
+
+    public double getValor2() {
+        return valor2;
+    }
+
+    public double getValor3() {
+        return valor3;
     }
 }

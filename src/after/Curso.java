@@ -41,4 +41,5 @@ public class Curso {
     public Optional<Aluno> buscarPorNome(String nome) {
         return alunos.stream().filter(a -> a.getNome().equalsIgnoreCase(nome)).findFirst();
     }
+
 }

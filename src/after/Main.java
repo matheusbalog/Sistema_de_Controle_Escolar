@@ -17,6 +17,7 @@ public class Main {
 
         aluno2.setNome("Eduarda");
 
+
         direito.listarAlunos().forEach(a ->
                 System.out.println(a.getNome() + " - " + a.getCpf() + " - " + a.getIdade())
         );
