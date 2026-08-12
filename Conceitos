@@ -20,6 +20,7 @@ ENCAPSULAMENTO
        -Cria cápsula protetora ao redor dos dados para que somente métodos específicos acessem ou alterem - E não outras classes
        -Reduz o acoplamento (dependência entre classes)
        -Não impacta outras partes do sistema - Mudar regras de negócio
+       -Protege de modificações indevidas
        -Oculta informações do usuário
 
 
@@ -29,7 +30,7 @@ ENCAPSULAMENTO
 
 OBJECT CALISTHENICS
 2. Evitar o uso de else (Reduz aninhamento)
-3. Encapsular todos os primitivos (Evita obsessão por primitivos - código duplicado)
+3. Encapsular todos os primitivos (Evita obsessão por primitivos - objetos que têm comportamentos específicos)
 
 
 --------------------------------
