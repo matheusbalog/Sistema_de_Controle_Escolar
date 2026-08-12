@@ -13,14 +13,13 @@ public class Aluno {
 
 
     public Aluno(String nome, int cpf, int idade, int nota1, int nota2, int nota3){
-        // PROBLEMA 9: Encapsulamento básico sem validação
+        // PROBLEMA 9: Encapsulamento básico sem validação | Encapsulamento incorreto
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
         this.nota1 = nota1;
         this.nota2 = nota2;
         this.nota3 = nota3;
-
     }
 
 
@@ -61,7 +60,9 @@ public class Aluno {
         this.nota3 = nota3;
     }
 
+    //SRP e OB2
     public void verificarSituacao() {
+        //Faz validaçao e printa
         if (((nota1 + nota2 + nota3)/3)< 7) {
             System.out.println("Reprovado");
             // PROBLEMA 7: uso de else

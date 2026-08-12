@@ -21,6 +21,9 @@ public class Main {
         direito.listarAlunos().forEach(a ->
                 System.out.println(a.getNome() + " - " + a.getCpf() + " - " + a.getIdade())
         );
+        engenharia.listarAlunos().forEach(a ->
+                System.out.println(a.getNome() + " - " + a.getCpf() + " - " + a.getIdade())
+        );
 
         aluno2.setNota(new Nota(2, 2, 2));
         System.out.println(aluno2.isAprovado() ? "Aprovado" : "Reprovado");

@@ -44,3 +44,5 @@ public class Aluno {
         return nota.isAprovado();
     }
 }
+
+//CLASSE MAIS LEGÍVEL
