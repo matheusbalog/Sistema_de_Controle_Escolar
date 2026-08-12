@@ -47,8 +47,12 @@ public class Curso {
                 System.out.println("Aluno removido por CPF");
                 return;
             }
+            else {
+                System.out.println("Aluno Não removido");
+            }
+
         }
-        System.out.println("Aluno Não removido");
+
     }
 
 

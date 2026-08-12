@@ -6,16 +6,20 @@ public class Aluno {
     private int idade;
     private Curso curso;
     //  // PROBLEMA 8: nota sem validação
-    private int nota;
+    private int nota1;
+    private int nota2;
+    private int nota3;
 
 
 
-    public Aluno(String nome, int cpf, int idade, int nota){
+    public Aluno(String nome, int cpf, int idade, int nota1, int nota2, int nota3){
         // PROBLEMA 9: Encapsulamento básico sem validação
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
-        this.nota = nota;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+        this.nota3 = nota3;
 
     }
 
@@ -50,13 +54,15 @@ public class Aluno {
         System.out.println("Nota alterada para: " + nota);
     }
 
-    //SRP: ALuno deveria ser responsável por verificar se foi aprovado ou não? Misturado com regras de negocio
+    //SRP: ALuno deveria ser responsável por verificar se foi aprovado ou não? Misturado com regras de negócio
     public void setNota(int nota){
-        this.nota = nota;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+        this.nota3 = nota3;
     }
 
     public void verificarSituacao() {
-        if (nota < 7) {
+        if (((nota1 + nota2 + nota3)/3)< 7) {
             System.out.println("Reprovado");
             // PROBLEMA 7: uso de else
         } else {

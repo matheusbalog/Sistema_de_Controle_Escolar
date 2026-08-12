@@ -7,8 +7,8 @@
 
 
 SRP (Single Responsibility Principle)
-    -Um dos princípios SOLID
-    -Uma classe deve ter apenas um motivo para mudar
+    -Um dos princípios SOLID - Robert Martin
+    -Uma classe deve ter apenas um motivo para mudar (Não pode fazer muitas coisas)
     Vantagens:
         1. Facilidade de entender e fazer manutenção no código
         2. Coesão
@@ -17,9 +17,9 @@ SRP (Single Responsibility Principle)
 
 
 ENCAPSULAMENTO
-       -Cria cápsula protetora ao redor dos dados para que somente métodos específicos acessem ou alterem,
+       -Cria cápsula protetora ao redor dos dados para que somente métodos específicos acessem ou alterem - E não outras classes
        -Reduz o acoplamento (dependência entre classes)
-       -Não impacta outras partes do sistema
+       -Não impacta outras partes do sistema - Mudar regras de negócio
        -Oculta informações do usuário
 
 
@@ -33,7 +33,10 @@ OBJECT CALISTHENICS
 
 
 --------------------------------
+VALUE OBJECT
+Representam um objeto que não possui identidade própria, mas sim um conjunto de atributos que definem seu valor
 
+--------------------------------
 BENEFÍCIOS
 
 -Regra 2: Menos código, menos complexo, guard clauses = métodos menores
