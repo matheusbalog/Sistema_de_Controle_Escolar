@@ -35,7 +35,6 @@ public class Curso {
 
 
     // PROBLEMA 2: remove E imprime no mesmo metodo (viola SRP)
-    // PROBLEMA 6: recebe cpf (int) mas o Aluno inteiro é percorrido para achar - referência completa do aluno para achar
     // PROBLEMA 3: 4 métodos diferentes
     public void removerAluno(int cpf) {
         for (Aluno aluno : alunos) {
@@ -70,7 +69,6 @@ public class Curso {
     // PROBLEMA 3: 4 métodos diferentes
     public Aluno buscarAlunoporCpf(int cpf) {
         for (Aluno aluno : alunos) {
-            // PROBLEMA 3: 4 métodos diferentes
             if (aluno.getCpf() == cpf) {
                 System.out.println("Aluno encontrado");
                 System.out.println(aluno.getNome());
@@ -81,7 +79,8 @@ public class Curso {
             }
         }
         System.out.println("Aluno não encontrado no curso");
-        return null;}
+        return null;
+    }
 
     public Aluno buscarAlunoporNome(String nome) {
         for (Aluno aluno : alunos) {

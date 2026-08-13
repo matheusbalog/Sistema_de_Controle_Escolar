@@ -9,7 +9,7 @@ public final class Cpf {
         String limpo = numero.replaceAll("[^0-9]", "");
         if (limpo.length() != 11) {
             //Evita uso de else
-            throw new IllegalArgumentException("CPF deve ter 11 dígitos");
+            throw new IllegalArgumentException("CPF deve ter 11 dígitos"); //Regras 2 e 3
         }
         this.numero = limpo;
     }

@@ -60,9 +60,9 @@ public class Aluno {
         this.nota3 = nota3;
     }
 
+    //E se mudar?
     //SRP e OB2
     public void verificarSituacao() {
-        //Faz validaçao e printa
         if (((nota1 + nota2 + nota3)/3)< 7) {
             System.out.println("Reprovado");
             // PROBLEMA 7: uso de else

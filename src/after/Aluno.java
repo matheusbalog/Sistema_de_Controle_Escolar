@@ -39,7 +39,7 @@ public class Aluno {
     public void setCurso(Curso curso) {
         this.curso = curso;
     }
-//Só existe 1 único metodo de consulta, além disso não tem else e não imprime nada na tela também
+//Só existe 1 único metodo de CONSULTA, além disso não tem else e não imprime nada na tela também
     public boolean isAprovado() {
         return nota.isAprovado();
     }

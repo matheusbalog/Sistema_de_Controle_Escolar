@@ -23,7 +23,7 @@ public class Curso {
         alunos.add(aluno);
         return true;
     }
-    // Resolve PROBLEMA 2 e 6: recebe Cpf (o identificador), e não o Aluno inteiro
+    // Resolve PROBLEMA 2 e 6: recebe Cpf (o VO), e não o Aluno inteiro
     public boolean removerAluno(Cpf cpf) {
         return alunos.removeIf(a -> a.getCpf().equals(cpf));
     }

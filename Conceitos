@@ -1,11 +1,3 @@
-1. Apresentação
-2. Explicação dos conceitos
-3. Explicar o before
-4. Explicar o after
-5. Benefícios
-6. Testes
-
-
 SRP (Single Responsibility Principle)
     -Um dos princípios SOLID - Robert Martin
     -Uma classe deve ter apenas um motivo para mudar (Não pode fazer muitas coisas)
@@ -31,14 +23,16 @@ OBJECT CALISTHENICS
 
 
 --------------------------------
+
 VALUE OBJECT
 Representam um objeto que não possui identidade própria, mas sim um conjunto de atributos que definem seu valor
 
 --------------------------------
+
 BENEFÍCIOS
 
 -Regra 2: Menos código, menos complexo, guard clauses = métodos menores
--Regera 3: Objeto valida seus próprios dados, evita duplicação
+-Regera 3: Objeto valida seus próprios dados
 -Encapsulamento: Sistema + seguro e confiável, facilita escalabilidade
 -SRP: Facilita localizar erros, - acoplamento, mudanças afetam - partes do sistema
--Mais fácil de testar, mais fácil de escalar, sem dependência entre as classes
+-Mais fácil de testar, mais fácil de escalar
